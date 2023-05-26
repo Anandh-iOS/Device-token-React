@@ -4,6 +4,7 @@ In Swift, to fetch the device token (push notification token) in a React Native 
 
 1. Create a new Swift file named PushNotificationBridge.swift:
 
+'''
 import Foundation
 import React
 
@@ -25,7 +26,7 @@ class PushNotificationBridge: NSObject, RCTBridgeModule {
     }
   }
 }
-
+'''
 
 2. In your AppDelegate.swift file, add the following property to store the device token:
 
