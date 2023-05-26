@@ -4,7 +4,7 @@ In Swift, to fetch the device token (push notification token) in a React Native 
 
 1. Create a new Swift file named PushNotificationBridge.swift:
 
-'''
+```
 import Foundation
 import React
 
@@ -26,14 +26,18 @@ class PushNotificationBridge: NSObject, RCTBridgeModule {
     }
   }
 }
-'''
+
+```
 
 2. In your AppDelegate.swift file, add the following property to store the device token:
 
+```
 var deviceToken: String?
+```
 
 3. In your AppDelegate.swift file, add the following methods to handle push notifications and store the device token:
 
+```
 import UserNotifications
 
 @UIApplicationMain
@@ -48,16 +52,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
   // ...
 }
-
+```
 
 4. In your React Native project, create a new file named PushNotificationBridge.js in the same directory as your App.js file. Add the following code to create a JavaScript module for fetching the device token:
 
+```
 import { NativeModules } from 'react-native';
 
 export default NativeModules.PushNotificationBridge;
+```
 
 5. Finally, in your App.js file or any other relevant component, import the PushNotificationBridge module and fetch the device token:
 
+```
 import PushNotificationBridge from './PushNotificationBridge';
 
 // ...
@@ -74,6 +81,7 @@ const fetchDeviceToken = async () => {
 // Call the fetchDeviceToken function wherever needed
 fetchDeviceToken();
 
+```
 
 Make sure you have properly linked the Swift code with your React Native project and rebuilt the iOS app for the changes to take effect.
 
